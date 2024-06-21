@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto;
+  }
+  .flex-centered {
+    @apply flex flex-row items-center justify-center;
+  }
+
+  .oneline {
+    @apply overflow-hidden text-ellipsis text-nowrap;
+  }
+}
+
+/* ===============================================
+Buttons
+=============================================== */
+@layer components {
+  .btn {
+    @apply font-semibold text-sm uppercase py-[10px] px-[30px];
+    @apply border-[0] rounded-[8px] shadow-none outline-none;
+    @apply ltr:tracking-wider rtl:tracking-normal;
+    @apply active:shadow-none active:border-[0] active:outline-none;
+    @apply focus:shadow-none focus:border-[0] focus:outline-none;
+    @apply disabled:cursor-not-allowed disabled:opacity-60 disabled:bg-[var(--mainColor)];
+    @apply md:px-3 md:py-1 sm:px-3 sm:py-1;
+  }
+
+  .btn.main-btn {
+    @apply text-white bg-lightblue;
+    @apply hover:bg-gradient;
+  }
+}
+
+/* ===============================================
+Header
+=============================================== */
+@layer components {
+  @media (max-width: 991px) {
+    .menu {
+      display: none !important;
+      inline-size: 250px !important;
+      justify-content: flex-start !important;
+      align-items: flex-start !important;
+      @apply start-[0];
+      @apply absolute bg-negrolineal top-[0] p-3 flex-col h-full gap-3;
+    }
+    .menu.active {
+      display: flex !important;
+    }
+
+    .menu .nav {
+      flex-direction: column;
+    }
+  }
+}
