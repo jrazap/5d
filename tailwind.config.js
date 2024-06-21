@@ -28,6 +28,7 @@ export default {
       xl: "1.5rem",
       "2xl": "2rem",
       "3xl": "2.5rem",
+      "6xl": "4rem",
     },
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
@@ -37,14 +38,19 @@ export default {
       gradientreversed: "linear-gradient(90deg, #7579ff 0%, #b224ef 100%)",
       shadow:
         "linear-gradient(90deg, rgba(178, 36, 239, 0.12) 0%, rgba(117, 121, 255, 0.12) 100%)",
+      bgshape: "url(./bg.png)",
     },
     extend: {
       colors: {
         negrolineal: "#1b1c37",
+        negroclaro: "#5F6073",
         lightblue: "#7579FF",
         purple: "#b224ef",
-        aliceblue:"#EDEEFF",
-        blackcoral:"#5F6073"
+        aliceblue: "#EDEEFF",
+        blackcoral: "#5F6073",
+      },
+      dropShadow: {
+        about: "4px 4px 92px 0px #7579FF2E",
       },
     },
   },

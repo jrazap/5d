@@ -5,6 +5,9 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    overflow-x: hidden;
+  }
   body {
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
@@ -55,6 +58,7 @@ Buttons
     @apply text-white bg-lightblue;
     @apply hover:bg-gradient;
   }
+
   .btn.gradient-btn {
     @apply text-white bg-gradient;
     @apply hover:bg-gradientreversed;
@@ -74,6 +78,7 @@ Header
       @apply start-[0];
       @apply absolute bg-negrolineal top-[0] p-3 flex-col h-full gap-3;
     }
+
     .menu.active {
       display: flex !important;
     }
@@ -86,6 +91,7 @@ Header
     .menu .nav .item.active {
       @apply relative;
     }
+
     .menu .nav .item.active::after {
       content: "";
       @apply absolute w-full h-[4px] bg-lightblue start-[0] -bottom-[1.5rem];
@@ -147,11 +153,13 @@ Skills
     background: url("./assets/skills/sm-dots.svg") no-repeat;
     background-size: contain;
   }
+
   .skills .section-title::after {
     @apply absolute content-[""] w-[150px] h-[70px] top-[0] -translate-x-[25%] -translate-y-[10%];
     background: url("./assets/skills/title-clash.svg") no-repeat;
     background-size: contain;
   }
+
   .skills .section-title::before {
     @apply absolute content-[""] w-[140px] h-[70px] top-[0] -translate-x-[70%] translate-y-[25%];
     background: url("./assets/skills/sm-dots.svg") no-repeat;
@@ -178,4 +186,62 @@ Skills
       --progress-bar-height: 120px;
     }
   }
+}
+
+/* ===============================================
+About
+=============================================== */
+.about .box .card::after {
+  @apply absolute content-[""] w-full h-[150px] -top-[10%] end-[0];
+  background: url("./assets/about/card-head.svg") no-repeat;
+  background-size: contain;
+}
+
+.about .boxes {
+  @apply bg-white drop-shadow-about relative rounded-[1.5rem];
+  @apply grid grid-cols-3 items-center gap-3;
+  @apply p-3 my-3 md:mb-[8rem] sm:mb-[8rem];
+  @apply lg:h-[250px] lg:translate-y-[40%];
+  @apply md:h-[250px] md:translate-y-[40%];
+  @apply sm:h-[150px] sm:translate-y-[50%];
+  @apply xs:h-[120px] xs:translate-y-[50%];
+}
+
+.about .boxes .box:not(:has(.featured)) {
+  @apply flex flex-col items-center -translate-y-[20%];
+}
+.about .boxes .box:has(.featured) {
+  @apply lg:-translate-y-[40%];
+  @apply md:-translate-y-[40%];
+  @apply sm:-translate-y-[50%];
+}
+
+.about .boxes .box .card.featured {
+  @apply relative p-3 bg-gradient flex flex-col justify-center items-center rounded-[1.5rem] overflow-hidden;
+  @apply lg:w-[200px] mx-auto lg:h-[280px];
+  @apply md:w-[180px] mx-auto md:h-[250px];
+  @apply sm:w-[100px] mx-auto sm:h-[150px];
+  @apply xs:w-[80px] mx-auto xs:h-[120px];
+}
+
+.about .boxes .box .box-percent {
+  @apply font-bold text-negrolineal text-3xl;
+  @apply md:text-lg sm:text-sm xs:text-xs;
+}
+.about .boxes .box .box-label {
+  @apply text-negroclaro font-semibold;
+  @apply xs:text-xxs;
+}
+
+.about .boxes .box .card.featured .box-percent,
+.about .boxes .box .card.featured .box-label {
+  @apply text-white;
+}
+
+.about .boxes .box img{
+  @apply w-6 h-auto;
+  @apply sm:w-5
+}
+
+@media (max-width: 991px) {
 }
