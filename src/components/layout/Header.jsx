@@ -9,7 +9,7 @@ const Header = () => {
   const MENU = [
     {
       label: "Home",
-      hash: "/",
+      hash: "#banner",
     },
     {
       label: "Skills",
@@ -25,7 +25,7 @@ const Header = () => {
     },
     {
       label: "Blog",
-      hash: "/blog",
+      hash: "#blog",
     },
   ];
 

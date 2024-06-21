@@ -7,6 +7,8 @@
 @layer base {
   html {
     overflow-x: hidden;
+    scroll-padding: 2rem;
+    scroll-behavior: smooth;
   }
   body {
     font-family: "Poppins", sans-serif;
@@ -238,9 +240,9 @@ About
   @apply text-white;
 }
 
-.about .boxes .box img{
+.about .boxes .box img {
   @apply w-6 h-auto;
-  @apply sm:w-5
+  @apply sm:w-5;
 }
 
 @media (max-width: 991px) {

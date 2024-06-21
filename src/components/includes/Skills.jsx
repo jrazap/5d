@@ -86,7 +86,7 @@ const Skills = () => {
   });
 
   return (
-    <section className="section skills relative">
+    <section className="section skills relative" id="skills">
       <div className="container">
         <h2 className="section-title">skills</h2>
         <hr className="border border-aliceblue my-4" />

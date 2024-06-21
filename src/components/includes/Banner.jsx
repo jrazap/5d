@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 const Banner = () => {
   return (
     <>
-      <section className="banner relative section">
+      <section className="banner relative section" id="banner">
         <div className="container lg:flex lg:flex-row lg:gap-3 lg:items-center">
           <div className="basis-1/2">
             <h1 className="hero-text relative lg:text-[6rem] md:text-[4rem] sm:text-[3rem] font-semibold text-negrolineal lg:leading-[100px] md:leading-[80px] sm:leading-[60px]">
