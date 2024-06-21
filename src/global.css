@@ -108,6 +108,12 @@ Banner
     .banner::after {
       @apply absolute content-[""] w-[270px] h-[140px] top-[0] end-[0] translate-x-[52%];
       background: url("./assets/banner/dots.svg") no-repeat;
+      background-size: contain;
+    }
+    .banner::before {
+      @apply absolute content-[""] w-[270px] h-[70px] bottom-[0] start-[0] ;
+      background: url("./assets/banner/sm-dots.svg") no-repeat;
+      background-size: contain;
     }
 
     .banner .hero-text::before {
