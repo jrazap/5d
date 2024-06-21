@@ -2,7 +2,7 @@ import resImg from "../../assets/about/res-icon.svg";
 import calImg from "../../assets/about/calender-icon.svg";
 const About = () => {
   return (
-    <section className="about section relative bg-bgshape min-h-screen bg-cover bg-no-repeat bg-center">
+    <section className="about section relative bg-negrolineal">
       <div className="container py-6">
         <h2 className="text-white text-[4rem] font-semibold text-center sm:text-3xl xs:text-2xl">
           About Me
