@@ -7,13 +7,22 @@
 @layer base {
   body {
     font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+  }
+  #root {
+    overflow-x: hidden;
   }
 }
 
 @layer components {
+  .section {
+    @apply my-4;
+  }
+
   .container {
     @apply px-4 mx-auto;
   }
+
   .flex-centered {
     @apply flex flex-row items-center justify-center;
   }
@@ -28,7 +37,8 @@ Buttons
 =============================================== */
 @layer components {
   .btn {
-    @apply font-semibold text-sm uppercase py-[10px] px-[30px];
+    @apply flex flex-row items-center gap-1;
+    @apply font-semibold text-sm uppercase py-[10px] px-[30px] w-fit;
     @apply border-[0] rounded-[8px] shadow-none outline-none;
     @apply ltr:tracking-wider rtl:tracking-normal;
     @apply active:shadow-none active:border-[0] active:outline-none;
@@ -40,6 +50,10 @@ Buttons
   .btn.main-btn {
     @apply text-white bg-lightblue;
     @apply hover:bg-gradient;
+  }
+  .btn.gradient-btn {
+    @apply text-white bg-gradient;
+    @apply hover:bg-gradientreversed;
   }
 }
 
@@ -62,6 +76,45 @@ Header
 
     .menu .nav {
       flex-direction: column;
+    }
+  }
+  @media (min-width: 992px) {
+    .menu .nav .item.active {
+      @apply relative;
+    }
+    .menu .nav .item.active::after {
+      content: "";
+      @apply absolute w-full h-[4px] bg-lightblue start-[0] -bottom-[1.5rem];
+    }
+  }
+}
+
+/* ===============================================
+Banner
+=============================================== */
+@layer components {
+  @media (max-width: 991px) {
+    .banner .hero-text span::after {
+      @apply w-[50px] h-[50px];
+    }
+  }
+
+  @media (min-width: 992px) {
+    .banner::after {
+      @apply absolute content-[""] w-[270px] h-[140px] top-[0] end-[0] translate-x-[52%];
+      background: url("./assets/banner/dots.svg") no-repeat;
+    }
+
+    .banner .hero-text::before {
+      @apply absolute content-[""] w-[200px] h-[200px] top-[50%] translate-y-[-50%] translate-x-[-50%] start-[0] bg-shadow opacity-40;
+      background: url("./assets/banner/gradient.svg") no-repeat;
+      background-size: contain;
+    }
+
+    .banner .hero-text span::after {
+      @apply absolute content-[""] w-[70px] h-[70px] top-[0];
+      background: url("./assets/banner/name-clash.svg");
+      background-size: contain;
     }
   }
 }

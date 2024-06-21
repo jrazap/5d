@@ -34,6 +34,9 @@ export default {
     },
     backgroundImage: {
       gradient: "linear-gradient(90deg, #b224ef 0%, #7579ff 100%)",
+      gradientreversed: "linear-gradient(90deg, #7579ff 0%, #b224ef 100%)",
+      shadow:
+        "linear-gradient(90deg, rgba(178, 36, 239, 0.12) 0%, rgba(117, 121, 255, 0.12) 100%)",
     },
     extend: {
       colors: {
