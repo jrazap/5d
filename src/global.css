@@ -9,9 +9,6 @@
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
   }
-  #root {
-    overflow-x: hidden;
-  }
 }
 
 @layer components {
@@ -93,9 +90,17 @@ Header
 Banner
 =============================================== */
 @layer components {
+  .banner-btn::after {
+    @apply absolute content-[""] w-[10rem] h-[10rem] top-[0] end-[0] translate-x-full translate-y-2;
+    background: url("./assets/banner/arrow.svg") no-repeat;
+    background-size: contain;
+  }
   @media (max-width: 991px) {
     .banner .hero-text span::after {
       @apply w-[50px] h-[50px];
+    }
+    .banner .banner-btn::after{
+      @apply w-[7rem] h-[7rem];
     }
   }
 

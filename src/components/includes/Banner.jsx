@@ -15,7 +15,7 @@ const Banner = () => {
               interface for creating it, it is that users prefer you because
               your product is easy to use.
             </p>
-            <a href="#" className="btn gradient-btn">
+            <a href="#" className="banner-btn relative btn gradient-btn">
               <span>Contact Me</span>
               <Icon icon="ei:arrow-right" className="text-lg" />
             </a>
