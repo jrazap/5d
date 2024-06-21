@@ -1,4 +1,5 @@
 import Banner from "./components/includes/Banner";
+import Skills from "./components/includes/Skills";
 import Header from "./components/layout/Header";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <Header />
       <Banner />
+      <Skills />
     </>
   );
 }

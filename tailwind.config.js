@@ -43,6 +43,8 @@ export default {
         negrolineal: "#1b1c37",
         lightblue: "#7579FF",
         purple: "#b224ef",
+        aliceblue:"#EDEEFF",
+        blackcoral:"#5F6073"
       },
     },
   },
