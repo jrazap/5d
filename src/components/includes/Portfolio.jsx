@@ -4,7 +4,12 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 const Project = (props) => {
   const { image, name, tags, url } = props;
   return (
-    <a href={url} target="_blank" className="w-10/12 h-full mx-1 group">
+    <a
+      href={url}
+      target="_blank"
+      className="w-10/12 h-full mx-1 group"
+      aria-label="project"
+    >
       <div className="overflow-hidden rounded-2xl h-[12rem] w-10/12 mx-auto shadow-projectbox -mb-[5rem] group-hover:translate-y-1 transition-all duration-100 delay-100">
         <LazyLoadImage
           className="w-full h-full object-fit"

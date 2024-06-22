@@ -52,7 +52,11 @@ const Header = () => {
             {MENU.map((item) => {
               return (
                 <li key={item.label} className="item">
-                  <a className="font-medium text-white" href={item.hash}>
+                  <a
+                    className="font-medium text-white"
+                    href={item.hash}
+                    aria-label="menu-item"
+                  >
                     {item.label}
                   </a>
                 </li>
@@ -60,13 +64,14 @@ const Header = () => {
             })}
           </ul>
 
-          <a href="#" className="btn main-btn">
+          <a href="#" className="btn main-btn" aria-label="contact-me">
             Contact Me
           </a>
         </div>
 
         <button
           className="w-6 h-4 lg:hidden"
+          aria-label="menu-bars"
           onClick={() => {
             setActive(!active);
           }}

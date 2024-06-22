@@ -25,7 +25,7 @@ const Footer = () => {
           <div className="flex gap-3 text-xl links">
             {LINKS.map((link, index) => {
               return (
-                <a href={link.url} key={index}>
+                <a href={link.url} key={index} aria-label="social-link">
                   <i className={`${link.icon} gradient-text`} />
                 </a>
               );
