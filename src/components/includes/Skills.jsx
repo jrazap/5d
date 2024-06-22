@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 const Skill = ({ label, percent }) => {
   return (
-    <div className="bg-white flex flex-col justify-center items-center gap-3">
+    <div className="flex flex-col items-center justify-center gap-3 bg-transparent">
       <div
         className="circular-progress flex-centered rounded-[50%] w-[var(--progress-bar-width)] h-[var(--progress-bar-height)]"
         data-inner-circle-color="white"
@@ -11,11 +11,11 @@ const Skill = ({ label, percent }) => {
         data-bg-color="lightgrey"
       >
         <div className="inner-circle absolute lg:w-[calc(var(--progress-bar-width)-50px)] lg:h-[calc(var(--progress-bar-height)-50px)] bg-white rounded-[50%] md:w-[calc(var(--progress-bar-width)-30px)] md:h-[calc(var(--progress-bar-height)-30px)] sm:w-[calc(var(--progress-bar-width)-30px)] sm:h-[calc(var(--progress-bar-height)-30px)]"></div>
-        <p className="text-blackcoral relative text-2xl font-semibold percentage sm:text-lg">
+        <p className="relative text-2xl font-semibold text-blackcoral percentage sm:text-lg">
           0%
         </p>
       </div>
-      <p className="text-blackcoral relative text-sm font-medium sm:text-xs text-center oneline">
+      <p className="relative text-sm font-medium text-center text-blackcoral sm:text-xs oneline">
         {label}
       </p>
     </div>
@@ -86,11 +86,11 @@ const Skills = () => {
   });
 
   return (
-    <section className="section skills relative" id="skills">
+    <section className="relative section skills" id="skills">
       <div className="container">
-        <h2 className="section-title">skills</h2>
-        <hr className="border border-aliceblue my-4" />
-        <div className="skills-container grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 place-items-center">
+        <h2 className="section-title gradient-text">skills</h2>
+        <hr className="my-4 border border-aliceblue" />
+        <div className="grid gap-4 skills-container lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 place-items-center">
           {skills.map((skill, index) => (
             <Skill key={index} label={skill.label} percent={skill.percent} />
           ))}

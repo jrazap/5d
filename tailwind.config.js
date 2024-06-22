@@ -40,7 +40,6 @@ export default {
       gradientreversed: "linear-gradient(90deg, #7579ff 0%, #b224ef 100%)",
       shadow:
         "linear-gradient(90deg, rgba(178, 36, 239, 0.12) 0%, rgba(117, 121, 255, 0.12) 100%)",
-      bgshape: "url(./bg.png)",
     },
     extend: {
       colors: {
@@ -53,6 +52,9 @@ export default {
       },
       dropShadow: {
         about: "4px 4px 92px 0px #7579FF2E",
+      },
+      boxShadow: {
+        projectbox: "0px 4px 24px 0px #647CFF2E",
       },
     },
   },

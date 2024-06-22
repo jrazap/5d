@@ -11,8 +11,11 @@
     scroll-behavior: smooth;
   }
   body {
-    font-family: "Poppins", sans-serif;
     overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+  }
+  ::-webkit-scrollbar {
+    width: 0;
   }
 }
 
@@ -34,8 +37,12 @@
   }
 
   .section-title {
-    @apply relative font-semibold;
+    @apply font-semibold;
     @apply lg:text-6xl md:text-5xl sm:text-3xl;
+  }
+
+  .gradient-text {
+    @apply relative;
     background: -webkit-linear-gradient(90deg, #b224ef 0%, #7579ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -107,13 +114,16 @@ Banner
 =============================================== */
 @layer components {
   .banner-btn::after {
-    @apply absolute content-[""] w-[10rem] h-[10rem] top-[0] end-[0] translate-x-full translate-y-2 bg-contain;
+    @apply absolute content-[""] w-[10rem] h-[10rem] top-[0] end-[0] translate-x-full translate-y-2;
     background: url("./assets/banner/arrow.svg") no-repeat;
+    background-size: contain;
   }
+
   @media (max-width: 991px) {
     .banner .hero-text span::after {
       @apply w-[50px] h-[50px];
     }
+
     .banner .banner-btn::after {
       @apply w-[7rem] h-[7rem];
     }
@@ -121,22 +131,26 @@ Banner
 
   @media (min-width: 992px) {
     .banner::after {
-      @apply absolute content-[""] w-[270px] h-[140px] top-[0] end-[0] translate-x-[52%] bg-contain;
+      @apply absolute content-[""] w-[270px] h-[140px] top-[0] end-[0] translate-x-[52%];
       background: url("./assets/banner/dots.svg") no-repeat;
+      background-size: contain;
     }
     .banner::before {
-      @apply absolute content-[""] w-[270px] h-[70px] bottom-[0] start-[0] bg-contain;
+      @apply absolute content-[""] w-[270px] h-[70px] bottom-[0] start-[0];
       background: url("./assets/banner/sm-dots.svg") no-repeat;
+      background-size: contain;
     }
 
     .banner .hero-text::before {
-      @apply absolute content-[""] w-[200px] h-[200px] top-[50%] translate-y-[-50%] translate-x-[-50%] start-[0] bg-shadow opacity-40 bg-contain;
+      @apply absolute content-[""] w-[200px] h-[200px] top-[50%] translate-y-[-50%] translate-x-[-50%] start-[0] bg-shadow opacity-40;
       background: url("./assets/banner/gradient.svg") no-repeat;
+      background-size: contain;
     }
 
     .banner .hero-text span::after {
-      @apply absolute content-[""] w-[70px] h-[70px] top-[0] bg-contain;
-      background: url("./assets/banner/name-clash.svg");
+      @apply absolute content-[""] w-[70px] h-[70px] top-[0];
+      background: url("./assets/banner/name-clash.svg") no-repeat;
+      background-size: contain;
     }
   }
 }
@@ -147,18 +161,33 @@ Skills
 
 @layer components {
   .skills::after {
-    @apply absolute content-[""] w-[140px] h-[70px] top-[50%] end-[0] translate-x-[50%] translate-y-[50%] bg-contain;
+    @apply absolute content-[""] w-[140px] h-[70px] top-[50%] end-[0] translate-x-[50%] translate-y-[50%];
+    @apply md:hidden sm:hidden;
     background: url("./assets/skills/sm-dots.svg") no-repeat;
+    background-size: contain;
+  }
+
+  .skills::before {
+    @apply absolute content-[""] w-[140px] h-[150px] bottom-[0] start-[0] translate-y-[35%] -z-10;
+    @apply md:hidden sm:hidden;
+    background: url("./assets/skills/bottom-dots.svg") no-repeat;
+    background-size: contain;
   }
 
   .skills .section-title::after {
-    @apply absolute content-[""] w-[150px] h-[70px] top-[0] -translate-x-[25%] -translate-y-[10%] bg-contain;
+    @apply absolute content-[""] top-[0] -translate-x-[25%] -translate-y-[10%];
+    @apply lg:w-[150px] lg:h-[70px];
+    @apply md:w-[150px] md:h-[50px];
+    @apply sm:w-[150px] sm:h-[50px];
     background: url("./assets/skills/title-clash.svg") no-repeat;
+    background-size: contain;
   }
 
   .skills .section-title::before {
-    @apply absolute content-[""] w-[140px] h-[70px] top-[0] -translate-x-[70%] translate-y-[25%] bg-contain;
+    @apply absolute content-[""] w-[140px] h-[70px] top-[0] -translate-x-[70%] translate-y-[25%];
+    @apply md:hidden sm:hidden;
     background: url("./assets/skills/sm-dots.svg") no-repeat;
+    background-size: contain;
   }
 
   @media (min-width: 992px) {
@@ -198,24 +227,26 @@ About
   }
 
   .about::before {
-    @apply absolute content-[""] w-[160px] h-[80px] top-[0] start-[0] bg-contain;
+    @apply absolute content-[""] w-[160px] h-[80px] top-[0] start-[0];
     @apply translate-y-[100%];
     @apply md:hidden sm:hidden;
     background: url("./assets/about/top-dots.svg") no-repeat;
+    background-size: contain;
   }
 
   .about .boxes::after {
-    @apply absolute content-[""] w-[70px] h-[70px] top-[0] end-[0] bg-contain;
-    @apply translate-x-[100%] -translate-y-[100%] z-10;
-    @apply md:hidden sm:hidden;
-    background: url("./assets/about/card-clash.svg");
+    @apply absolute content-[""] w-[70px] h-[70px] top-[0] end-[0];
+    @apply translate-x-[50%] -translate-y-[50%] z-10;
+    background: url("./assets/about/card-clash.svg") no-repeat;
+    background-size: contain;
   }
 
   .about .boxes::before {
-    @apply absolute content-[""] w-[180px] h-[96px] bottom-[0] end-[0] bg-contain;
+    @apply absolute content-[""] w-[180px] h-[94px] bottom-[0] end-[0];
     @apply translate-x-[108%] translate-y-[50%] z-10;
     @apply md:hidden sm:hidden;
-    background: url("./assets/about/bottom-dots.svg");
+    background: url("./assets/about/bottom-dots.svg") no-repeat;
+    background-size: contain;
   }
 
   .about .boxes .box:not(:has(.featured)) {
@@ -260,5 +291,27 @@ About
   .about .boxes .box img {
     @apply w-6 h-auto;
     @apply sm:w-5;
+  }
+}
+
+/* ===============================================
+Portfolio
+=============================================== */
+@layer components {
+  .portfolio::after {
+    @apply absolute content-[""] w-[140px] h-[150px] bottom-[0] start-[0] translate-y-[35%];
+    @apply md:hidden sm:hidden;
+    z-index: -1 !important;
+    background: url("./assets/portfolio/bottom-dots.svg") no-repeat;
+    background-size: contain;
+  }
+
+  .portfolio .section-title::after {
+    @apply absolute h-6 content-[""] bottom-[0] -translate-x-[100%] translate-y-[70%];
+    @apply lg:w-[150px];
+    @apply md:w-[130px];
+    @apply sm:w-[100px];
+    background: url("./assets/portfolio/title-underline.svg") no-repeat;
+    background-size: contain;
   }
 }
