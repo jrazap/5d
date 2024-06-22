@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "font-awesome/css/font-awesome.min.css"
 import "./global.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -1,5 +1,4 @@
 import heroImg from "../../assets/banner/hero-img.webp";
-import { Icon } from "@iconify/react/dist/iconify.js";
 const Banner = () => {
   return (
     <>
@@ -17,7 +16,7 @@ const Banner = () => {
             </p>
             <a href="#" className="relative banner-btn btn gradient-btn">
               <span>Contact Me</span>
-              <Icon icon="ei:arrow-right" className="text-lg" />
+              <i className="text-lg fa fa-arrow-circle-right" />
             </a>
           </div>
           <div className="lg:basis-1/2 md:hidden sm:hidden">

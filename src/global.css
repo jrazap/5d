@@ -315,3 +315,20 @@ Portfolio
     background-size: contain;
   }
 }
+
+/* ===============================================
+Footer
+=============================================== */
+@layer components {
+  footer::after {
+    @apply absolute content-[""] w-[50px] h-[50px] top-[0] end-[0] translate-y-5 sm:w-5;
+    background: url("./assets/footer/top-dots.svg") no-repeat;
+    background-size: contain;
+  }
+
+  footer::before {
+    @apply absolute content-[""] w-[100px] h-[30px] bottom-[0] start-[0] -translate-x-1 sm:w-6;
+    background: url("./assets/footer/bottom-dots.svg") no-repeat;
+    background-size: contain;
+  }
+}

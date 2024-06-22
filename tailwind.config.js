@@ -45,6 +45,7 @@ export default {
       colors: {
         negrolineal: "#1b1c37",
         negroclaro: "#5F6073",
+        moradoclaro:"#EDEEFF",
         lightblue: "#7579FF",
         purple: "#b224ef",
         aliceblue: "#EDEEFF",
