@@ -34,7 +34,8 @@
   }
 
   .section-title {
-    @apply text-[64px] font-semibold relative;
+    @apply relative font-semibold;
+    @apply lg:text-6xl md:text-5xl sm:text-3xl;
     background: -webkit-linear-gradient(90deg, #b224ef 0%, #7579ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -78,7 +79,7 @@ Header
       justify-content: flex-start !important;
       align-items: flex-start !important;
       @apply start-[0];
-      @apply absolute bg-negrolineal top-[0] p-3 flex-col h-full gap-3;
+      @apply fixed bg-negrolineal top-[0] p-3 flex-col h-full gap-3;
     }
 
     .menu.active {
@@ -106,9 +107,8 @@ Banner
 =============================================== */
 @layer components {
   .banner-btn::after {
-    @apply absolute content-[""] w-[10rem] h-[10rem] top-[0] end-[0] translate-x-full translate-y-2;
+    @apply absolute content-[""] w-[10rem] h-[10rem] top-[0] end-[0] translate-x-full translate-y-2 bg-contain;
     background: url("./assets/banner/arrow.svg") no-repeat;
-    background-size: contain;
   }
   @media (max-width: 991px) {
     .banner .hero-text span::after {
@@ -121,26 +121,22 @@ Banner
 
   @media (min-width: 992px) {
     .banner::after {
-      @apply absolute content-[""] w-[270px] h-[140px] top-[0] end-[0] translate-x-[52%];
+      @apply absolute content-[""] w-[270px] h-[140px] top-[0] end-[0] translate-x-[52%] bg-contain;
       background: url("./assets/banner/dots.svg") no-repeat;
-      background-size: contain;
     }
     .banner::before {
-      @apply absolute content-[""] w-[270px] h-[70px] bottom-[0] start-[0];
+      @apply absolute content-[""] w-[270px] h-[70px] bottom-[0] start-[0] bg-contain;
       background: url("./assets/banner/sm-dots.svg") no-repeat;
-      background-size: contain;
     }
 
     .banner .hero-text::before {
-      @apply absolute content-[""] w-[200px] h-[200px] top-[50%] translate-y-[-50%] translate-x-[-50%] start-[0] bg-shadow opacity-40;
+      @apply absolute content-[""] w-[200px] h-[200px] top-[50%] translate-y-[-50%] translate-x-[-50%] start-[0] bg-shadow opacity-40 bg-contain;
       background: url("./assets/banner/gradient.svg") no-repeat;
-      background-size: contain;
     }
 
     .banner .hero-text span::after {
-      @apply absolute content-[""] w-[70px] h-[70px] top-[0];
+      @apply absolute content-[""] w-[70px] h-[70px] top-[0] bg-contain;
       background: url("./assets/banner/name-clash.svg");
-      background-size: contain;
     }
   }
 }
@@ -151,21 +147,18 @@ Skills
 
 @layer components {
   .skills::after {
-    @apply absolute content-[""] w-[140px] h-[70px] top-[50%] end-[0] translate-x-[50%] translate-y-[50%];
+    @apply absolute content-[""] w-[140px] h-[70px] top-[50%] end-[0] translate-x-[50%] translate-y-[50%] bg-contain;
     background: url("./assets/skills/sm-dots.svg") no-repeat;
-    background-size: contain;
   }
 
   .skills .section-title::after {
-    @apply absolute content-[""] w-[150px] h-[70px] top-[0] -translate-x-[25%] -translate-y-[10%];
+    @apply absolute content-[""] w-[150px] h-[70px] top-[0] -translate-x-[25%] -translate-y-[10%] bg-contain;
     background: url("./assets/skills/title-clash.svg") no-repeat;
-    background-size: contain;
   }
 
   .skills .section-title::before {
-    @apply absolute content-[""] w-[140px] h-[70px] top-[0] -translate-x-[70%] translate-y-[25%];
+    @apply absolute content-[""] w-[140px] h-[70px] top-[0] -translate-x-[70%] translate-y-[25%] bg-contain;
     background: url("./assets/skills/sm-dots.svg") no-repeat;
-    background-size: contain;
   }
 
   @media (min-width: 992px) {
@@ -193,57 +186,79 @@ Skills
 /* ===============================================
 About
 =============================================== */
-.about .box .card::after {
-  @apply absolute content-[""] w-full h-[150px] -top-[10%] end-[0];
-  background: url("./assets/about/card-head.svg") no-repeat;
-  background-size: contain;
-}
+@layer components {
+  .about .boxes {
+    @apply bg-white drop-shadow-about relative rounded-[1.5rem] lg:w-10/12 mx-auto;
+    @apply grid items-center grid-cols-3 gap-3;
+    @apply p-3 my-3 md:mb-[8rem] sm:mb-[8rem];
+    @apply lg:h-[250px] lg:translate-y-[40%];
+    @apply md:h-[250px] md:translate-y-[40%];
+    @apply sm:h-[150px] sm:translate-y-[50%];
+    @apply xs:h-[120px] xs:translate-y-[50%];
+  }
 
-.about .boxes {
-  @apply bg-white drop-shadow-about relative rounded-[1.5rem];
-  @apply grid grid-cols-3 items-center gap-3;
-  @apply p-3 my-3 md:mb-[8rem] sm:mb-[8rem];
-  @apply lg:h-[250px] lg:translate-y-[40%];
-  @apply md:h-[250px] md:translate-y-[40%];
-  @apply sm:h-[150px] sm:translate-y-[50%];
-  @apply xs:h-[120px] xs:translate-y-[50%];
-}
+  .about::before {
+    @apply absolute content-[""] w-[160px] h-[80px] top-[0] start-[0] bg-contain;
+    @apply translate-y-[100%];
+    @apply md:hidden sm:hidden;
+    background: url("./assets/about/top-dots.svg") no-repeat;
+  }
 
-.about .boxes .box:not(:has(.featured)) {
-  @apply flex flex-col items-center -translate-y-[20%];
-}
-.about .boxes .box:has(.featured) {
-  @apply lg:-translate-y-[40%];
-  @apply md:-translate-y-[40%];
-  @apply sm:-translate-y-[50%];
-}
+  .about .boxes::after {
+    @apply absolute content-[""] w-[70px] h-[70px] top-[0] end-[0] bg-contain;
+    @apply translate-x-[100%] -translate-y-[100%] z-10;
+    @apply md:hidden sm:hidden;
+    background: url("./assets/about/card-clash.svg");
+  }
 
-.about .boxes .box .card.featured {
-  @apply relative p-3 bg-gradient flex flex-col justify-center items-center rounded-[1.5rem] overflow-hidden;
-  @apply lg:w-[200px] mx-auto lg:h-[280px];
-  @apply md:w-[180px] mx-auto md:h-[250px];
-  @apply sm:w-[100px] mx-auto sm:h-[150px];
-  @apply xs:w-[80px] mx-auto xs:h-[120px];
-}
+  .about .boxes::before {
+    @apply absolute content-[""] w-[180px] h-[96px] bottom-[0] end-[0] bg-contain;
+    @apply translate-x-[108%] translate-y-[50%] z-10;
+    @apply md:hidden sm:hidden;
+    background: url("./assets/about/bottom-dots.svg");
+  }
 
-.about .boxes .box .box-percent {
-  @apply font-bold text-negrolineal text-3xl;
-  @apply md:text-lg sm:text-sm xs:text-xs;
-}
-.about .boxes .box .box-label {
-  @apply text-negroclaro font-semibold;
-  @apply xs:text-xxs;
-}
+  .about .boxes .box:not(:has(.featured)) {
+    @apply flex flex-col items-center -translate-y-[20%];
+  }
 
-.about .boxes .box .card.featured .box-percent,
-.about .boxes .box .card.featured .box-label {
-  @apply text-white;
-}
+  .about .boxes .box:has(.featured) {
+    @apply lg:-translate-y-[40%];
+    @apply md:-translate-y-[40%];
+    @apply sm:-translate-y-[50%];
+  }
 
-.about .boxes .box img {
-  @apply w-6 h-auto;
-  @apply sm:w-5;
-}
+  .about .boxes .box .card::after {
+    @apply absolute content-[""] w-full h-[150px] -top-[10%] end-[0];
+    background: url("./assets/about/card-head.svg") no-repeat;
+    background-size: contain;
+  }
 
-@media (max-width: 991px) {
+  .about .boxes .box .card.featured {
+    @apply relative p-3 bg-gradient flex flex-col justify-center items-center rounded-[1.5rem] overflow-hidden;
+    @apply lg:w-[200px] mx-auto lg:h-[280px];
+    @apply md:w-[180px] mx-auto md:h-[250px];
+    @apply sm:w-[100px] mx-auto sm:h-[150px];
+    @apply xs:w-[80px] mx-auto xs:h-[120px];
+  }
+
+  .about .boxes .box .box-percent {
+    @apply text-3xl font-bold text-negrolineal;
+    @apply md:text-lg sm:text-sm xs:text-xs;
+  }
+
+  .about .boxes .box .box-label {
+    @apply font-semibold text-negroclaro;
+    @apply xs:text-xxs;
+  }
+
+  .about .boxes .box .card.featured .box-percent,
+  .about .boxes .box .card.featured .box-label {
+    @apply text-white;
+  }
+
+  .about .boxes .box img {
+    @apply w-6 h-auto;
+    @apply sm:w-5;
+  }
 }
